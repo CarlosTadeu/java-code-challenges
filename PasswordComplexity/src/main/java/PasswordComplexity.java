@@ -2,6 +2,13 @@ import java.util.Scanner;
 
 public class PasswordComplexity {
 
+    public static boolean isPasswordComplexRegex(String password) {
+        return password.length() >= 6 &&
+                password.matches(".*\\d.*") &&
+                password.matches(".*[a-z].*") &&
+                password.matches(".*[A-Z].*");
+    }
+
     public static boolean isPasswordComplex(String password) {
         if (password == null || password.length() < 6) {
             return false;
